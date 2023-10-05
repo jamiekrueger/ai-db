@@ -29,6 +29,8 @@ if __name__ == "__main__":
     database = "./pythonsqlite.db"
     conn = create_connection(database)
 
+    # select_all_from_games(conn)
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--query", type=str, help="SELECT * FROM menu where unit_price >=55.0")
     args = parser.parse_args()
