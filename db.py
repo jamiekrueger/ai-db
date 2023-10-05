@@ -1,21 +1,6 @@
 import sqlite3
 from sqlite3 import Error
 
-"""
-    https://www.sqlitetutorial.net/sqlite-python/sqlite-python-select/
-"""
-
-"""def create_connection(db_file):
-    conn = None
-    try:
-        conn = sqlite3.connect(db_file)
-        print(sqlite3.version)
-    except Error as e:
-        print(e)
-    finally:
-        if conn:
-            conn.close()"""
-
 
 def create_connection(db_file):
     """ create a database connection to the SQLite database
@@ -46,4 +31,4 @@ def create_table(conn, create_table_sql):
 
 
 if __name__ == '__main__':
-    create_connection("db/pythonsqlite.db")
+    create_connection("./pythonsqlite.db")
