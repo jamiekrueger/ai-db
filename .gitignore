@@ -1,0 +1,9 @@
+# Env Files
+.env
+
+# Database
+pythonsqlite.db
+
+# Pycharm stuff
+.idea
+__pycache__/
