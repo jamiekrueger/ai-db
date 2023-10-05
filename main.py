@@ -9,6 +9,7 @@ from dotenv import load_dotenv
 
 DATABASE = "./pythonsqlite.db"
 
+
 def main(conn, question):
     load_dotenv()
 
@@ -29,7 +30,6 @@ def main(conn, question):
         max_tokens=200
     )
 
-
     q = response["choices"][0]["text"]
 
     print(f"AI-generated SQL query: \n{q}")
@@ -44,4 +44,3 @@ if __name__ == "__main__":
     conn = create_connection(DATABASE)
 
     main(conn, question=args.query)
-

@@ -11,6 +11,7 @@ def select_all_from_games(conn):
     for row in rows:
         print(row)
 
+
 def select_from_table(conn, query):
     """
     Query all rows in the tasks table
@@ -24,6 +25,7 @@ def select_from_table(conn, query):
 
     for row in rows:
         print(row)
+
 
 if __name__ == "__main__":
     database = "./pythonsqlite.db"

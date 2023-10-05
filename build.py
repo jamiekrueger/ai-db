@@ -5,7 +5,6 @@ from schema import *
 
 
 def insert_to_customers(conn):
-    
     sql = """
         INSERT INTO customers VALUES
         (1, 'Skyler Thulborn', '2/2/1960', 'Male'),
@@ -115,8 +114,8 @@ def insert_to_customers(conn):
     conn.commit()
     return cur.lastrowid
 
-def insert_to_games(conn):
 
+def insert_to_games(conn):
     sql = """
         INSERT INTO games VALUES
         (1, 'Sonsing', 'Card Game', '', 'Quatz', 32, 7),
@@ -150,8 +149,8 @@ def insert_to_games(conn):
     conn.commit()
     return cur.lastrowid
 
-def insert_to_inventory(conn):
 
+def insert_to_inventory(conn):
     sql = """
         INSERT INTO inventory VALUES
         (1, '$8.48', 8),
@@ -184,6 +183,7 @@ def insert_to_inventory(conn):
     cur.execute(sql)
     conn.commit()
     return cur.lastrowid
+
 
 def insert_to_orders(conn):
     sql = """
@@ -314,8 +314,8 @@ def insert_to_orders(conn):
     conn.commit()
     return cur.lastrowid
 
-def insert_to_reviews(conn):
 
+def insert_to_reviews(conn):
     sql = """
         INSERT INTO reviews VALUES
         (1, 54, 16, 'We had a lot of fun playing this at first, but the pieces are too easy to break so it is unplayable now. The game was great other than the brittle pieces.', 1.7),
@@ -374,6 +374,7 @@ def insert_to_reviews(conn):
     conn.commit()
     return cur.lastrowid
 
+
 def main():
     database = "./pythonsqlite.db"
 
@@ -392,7 +393,6 @@ def main():
 
     print("Database build successful!")
 
+
 if __name__ == "__main__":
     main()
-
-

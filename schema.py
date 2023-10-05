@@ -50,6 +50,7 @@ sql_create_reviews_table = """
     );
 """
 
+
 def get_schema():
     schema = f"{sql_create_customers_table}{sql_create_games_table}{sql_create_inventory_table}{sql_create_orders_table}{sql_create_reviews_table}"
     return schema
