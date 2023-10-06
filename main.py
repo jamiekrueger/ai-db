@@ -13,18 +13,20 @@ DATABASE = "./pythonsqlite.db"
 def get_prompt_string(question, strategy):
     if strategy == 1:
         return f"""
-    
-    Given the following SQL Schema:{get_schema()}
-    Write a SQL query to answer this question: {question}
-    
-    """
+
+Given the following SQL Schema:{get_schema()}
+
+Write a SQL query to answer this question: {question}
+ 
+"""
     elif strategy == 2:
         return f"""
-        
-        Given the following SQL Schema:{get_schema_with_examples()}
-        Write a SQL query to answer this question: {question}
 
-        """
+Given the following SQL Schema:{get_schema_with_examples()}
+
+Write a SQL query to answer this question: {question}
+
+"""
 
 
 def main(conn, question, strategy):
