@@ -55,8 +55,7 @@ CREATE TABLE reviews (
 
 
 def get_schema():
-    conn = create_connection("./pythonsqlite.db")
-    schema = f"{sql_create_customers_table}{select_example(conn, 'customers')}{sql_create_games_table}{sql_create_inventory_table}{sql_create_orders_table}{sql_create_reviews_table}"
+    schema = f"{sql_create_customers_table}{sql_create_games_table}{sql_create_inventory_table}{sql_create_orders_table}{sql_create_reviews_table}"
     return schema
 
 
