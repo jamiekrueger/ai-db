@@ -24,10 +24,18 @@ Write a SQL query to answer this question: {question}
 
 Given the following SQL Schema:{get_schema_with_examples()}
 
-Write a SQL query to answer this question: {question}
+Write a valid SQLite query to answer this question: {question}
 
 """
+    elif strategy == 3:
+        return f"""
 
+Given the following SQL Schema:{get_schema_with_examples()}
+
+Write a valid SQLite query to answer this question: {question}
+
+If asked about a customer's age, you can use SQLite's string operations to retrieve their birth day month and year from the birthdate string. Remember, age is current date - birth date.
+"""
 
 def main(conn, question, strategy):
     load_dotenv()
