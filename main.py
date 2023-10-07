@@ -34,7 +34,7 @@ Given the following SQL Schema:{get_schema_with_examples()}
 
 Write a valid SQLite query to answer the following questions for the tables provided above: 
 
-Question: Which game is most popular with people over the age of 50
+Question: Which game is most popular with people over the age of 50?
 
 SELECT g.name, COUNT(*) as num_players_over_50
 FROM games as g
@@ -48,7 +48,8 @@ WHERE timediff(date(),
                 printf('%02d', CAST(substr(c.birthdate, instr(c.birthdate, '/') + 1, length(c.birthdate) - instr(c.birthdate, '/') - 5) AS INT))
             ) > timediff(date(),strftime('%Y-%m-%d', 'now', '-50 years'))
 GROUP BY g.name
-ORDER BY num_players_over_50 DESC;
+ORDER BY num_players_over_50 DESC
+LIMIT 1;
 
 Question: What game is closest to selling out?
 
