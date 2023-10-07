@@ -34,9 +34,9 @@ Given the following SQL Schema:{get_schema_with_examples()}
 
 Write a valid SQLite query to answer the following questions for the tables provided above: 
 
-Question: Which game is most popular with people over the age of 50?
+Question: Which game is most popular with people under the age of 25?
 
-SELECT g.name, COUNT(*) as num_players_over_50
+SELECT g.name, COUNT(*) as num_players_under_25
 FROM games as g
 INNER JOIN orders as o on g.gameId = o.gameId
 INNER JOIN customers as c on o.customerId = c.customerId
@@ -46,9 +46,9 @@ WHERE timediff(date(),
                 printf('%02d', CAST(substr(c.birthdate, 1, instr(c.birthdate, '/') - 1) AS INT)) ||
                 '-' ||
                 printf('%02d', CAST(substr(c.birthdate, instr(c.birthdate, '/') + 1, length(c.birthdate) - instr(c.birthdate, '/') - 5) AS INT))
-            ) > timediff(date(),strftime('%Y-%m-%d', 'now', '-50 years'))
+            ) < timediff(date(),strftime('%Y-%m-%d', 'now', '-25 years'))
 GROUP BY g.name
-ORDER BY num_players_over_50 DESC
+ORDER BY num_players_under_25 DESC
 LIMIT 1;
 
 Question: What game is closest to selling out?
@@ -90,7 +90,7 @@ def main(conn, question, strategy):
         model="text-davinci-003",
         prompt=prompt,
         temperature=0,
-        max_tokens=200
+        max_tokens=500
     )
 
     q = response["choices"][0]["text"]
